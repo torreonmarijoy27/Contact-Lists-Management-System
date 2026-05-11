@@ -141,31 +141,15 @@ body {
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-
     <div class="logo-box">
-
-        <!-- DASHBOARD ICON -->
-        <i class="fa-solid fa-address-book"
-           style="
-           font-size:40px;
-           color:white;
-           "></i>
-
+        <img src="https://cdn-icons-png.flaticon.com/512/1256/1256652.png">
         <h4>ContactSys</h4>
-
     </div>
 
-    <a href="index.php">
-        <i class="fa-solid fa-house"></i>
-        Dashboard
-    </a>
-
-    <a href="add.php">
-        <i class="fa-solid fa-user-plus"></i>
-        Add Contact
-    </a>
-
+    <a href="index.php">🏠 Dashboard</a>
+    <a href="add.php">➕ Add Contact</a>
 </div>
+
 <!-- MAIN -->
 <div class="main-content">
 <div class="container mt-5">
