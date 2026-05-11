@@ -146,8 +146,8 @@ body {
         <h4>ContactSys</h4>
     </div>
 
-    <a href="index.php">🏠 Dashboard</a>
-    <a href="add.php">➕ Add Contact</a>
+    <a href="index.php"> Dashboard</a>
+    <a href="add.php"> Add Contact</a>
 </div>
 
 <!-- MAIN -->
