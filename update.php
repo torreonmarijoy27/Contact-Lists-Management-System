@@ -1,13 +1,15 @@
 <?php
 include 'db.php';
-echo "ID: " . $id;
-// ✅ FIX: prevent Undefined array key error
-if (!isset($_GET['id']) || empty($_GET['id'])) {
+
+// ❌ REMOVED: echo "ID: " . $id;
+
+// ✅ FIX: use POST instead of GET
+if (!isset($_POST['id']) || empty($_POST['id'])) {
     header("Location: index.php");
     exit();
 }
 
-$id = $_GET['id'];
+$id = (int) $_POST['id'];
 
 // SAFE QUERY
 $result = $conn->query("SELECT * FROM contacts WHERE id=$id");
@@ -109,6 +111,9 @@ if (isset($_POST['update'])) {
         <h2 class="title mb-4 text-center"> Update Contact</h2>
 
         <form method="POST" enctype="multipart/form-data">
+
+            <!-- IMPORTANT: ID must be sent -->
+            <input type="hidden" name="id" value="<?= $row['id'] ?>">
 
             <div class="mb-2">
                 <label>Name</label>
