@@ -142,12 +142,12 @@ body {
 <!-- SIDEBAR -->
 <div class="sidebar">
     <div class="logo-box">
-        <img src="https://www.flaticon.com/free-icon/dashboard_15066899">
+        <img src="https://cdn-icons-png.flaticon.com/512/1256/1256652.png">
         <h4>ContactSys</h4>
     </div>
 
-    <a href="index.php"> Dashboard</a>
-    <a href="add.php"> Add Contact</a>
+    <a href="index.php">🏠 Dashboard</a>
+    <a href="add.php">➕ Add Contact</a>
 </div>
 
 <!-- MAIN -->
