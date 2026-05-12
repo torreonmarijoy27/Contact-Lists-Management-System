@@ -140,11 +140,10 @@ body {
 <body>
 
 <!-- SIDEBAR -->
-<div class="sidebar">
-    <div class="logo-box">
-        <img src="https://www.flaticon.com/free-icon/contact-mail_3095583.png">
-        <h4>ContactSys</h4>
-    </div>
+<div class="logo-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/3095/3095583.png">
+    <h4>ContactSys</h4>
+</div>
 
     <a href="index.php">
     <img src="https://cdn-icons-png.flaticon.com/512/15066/15066899.png" 
