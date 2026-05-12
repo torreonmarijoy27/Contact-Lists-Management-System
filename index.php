@@ -165,7 +165,12 @@ body {
 <div class="container mt-5">
 <div class="card-box">
 
-<h2>📇 Contact Management</h2>
+<h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/3010/3010581.png"
+         width="35"
+         style="margin-right:10px; vertical-align:middle;">
+    Contact Management
+</h2>
 
 <!-- OVERVIEW -->
 <div class="row mb-4">
