@@ -152,8 +152,12 @@ body {
          style="margin-right:10px;">
     Dashboard
 </a>
-
-    <a href="add.php">➕ Add Contact</a>
+<a href="add.php">
+    <img src="https://cdn-icons-png.flaticon.com/512/4175/4175032.png"
+         width="20"
+         style="margin-right:10px;">
+    Add Contact
+</a>
 </div>
 
 <!-- MAIN -->
