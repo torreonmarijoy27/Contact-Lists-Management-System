@@ -142,7 +142,7 @@ body {
 <!-- SIDEBAR -->
 <div class="sidebar">
     <div class="logo-box">
-        <img src="https://www.flaticon.com/free-icon/contact-mail_3095583.png" alt="Logo">
+        <img src="<a href="https://www.flaticon.com/free-icons/contact-us" title="contact-us icons">Contact-us icons created by redempticon - Flaticon</a>">
         <h4>ContactSys</h4>
     </div>
 
