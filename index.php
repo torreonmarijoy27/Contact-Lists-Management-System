@@ -146,7 +146,13 @@ body {
         <h4>ContactSys</h4>
     </div>
 
-    <a href="index.php">🏠 Dashboard</a>
+    <a href="index.php">
+    <img src="https://cdn-icons-png.flaticon.com/512/15066/15066899.png" 
+         width="20" 
+         style="margin-right:10px;">
+    Dashboard
+</a>
+
     <a href="add.php">➕ Add Contact</a>
 </div>
 
