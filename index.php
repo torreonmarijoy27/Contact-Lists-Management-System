@@ -167,12 +167,22 @@ body {
 <!-- SIDEBAR -->
 <div class="sidebar">
     <div class="logo-box">
-        <img src="https://cdn-icons-png.flaticon.com/512/1256/1256652.png">
+        <img src="uploads/customer-service.png">
         <h4>ContactSys</h4>
     </div>
 
-    <a href="index.php">🏠 Dashboard</a>
-    <a href="add.php">➕ Add Contact</a>
+    <a href="index.php">
+    <img src="https://cdn-icons-png.flaticon.com/512/15066/15066899.png" 
+         width="20" 
+         style="margin-right:10px;">
+    Dashboard
+</a>
+<a href="add.php">
+    <img src="https://cdn-icons-png.flaticon.com/512/4175/4175032.png"
+         width="20"
+         style="margin-right:10px;">
+    Add Contact
+</a>
 </div>
 
 <!-- MAIN -->
@@ -180,7 +190,12 @@ body {
 <div class="container mt-5">
 <div class="card-box">
 
-<h2>📇 Contact Management</h2>
+<h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/3010/3010581.png"
+         width="35"
+         style="margin-right:10px; vertical-align:middle;">
+    Contact Management
+</h2>
 
 <!-- OVERVIEW -->
 <div class="row mb-4">
