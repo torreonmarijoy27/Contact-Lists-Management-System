@@ -147,14 +147,14 @@ body {
     </div>
 
     <a href="index.php">
-    <img src="https://cdn-icons-png.flaticon.com/512/15066/15066899.png" 
+    <img src="uploads/home (1).png" 
          width="20" 
          style="margin-right:10px;">
     Dashboard
 </a>
 <a href="add.php">
-    <img src="https://cdn-icons-png.flaticon.com/512/4175/4175032.png"
-         width="20"
+    <img src="uploads/add-user (1).png"
+         width="20"g
          style="margin-right:10px;">
     Add Contact
 </a>
@@ -166,7 +166,7 @@ body {
 <div class="card-box">
 
 <h2>
-    <img src="https://cdn-icons-png.flaticon.com/512/3010/3010581.png"
+    <img src="uploads/replacement.png"
          width="35"
          style="margin-right:10px; vertical-align:middle;">
     Contact Management
