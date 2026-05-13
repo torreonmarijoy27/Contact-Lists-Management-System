@@ -143,7 +143,7 @@ body {
 <div class="sidebar">
     <div class="logo-box">
         <img src="uploads/customer-service.png">
-        <h4>ContactSystem</h4>
+        <h4>ContactSys</h4>
     </div>
 
     <a href="index.php">
