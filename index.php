@@ -1,7 +1,7 @@
 <?php include 'db.php'; ?>
 
 <?php
-// ===================== UPDATE HANDLER (FIX ADDED) =====================
+// ===================== UPDATE HANDLER =====================
 if (isset($_POST['id'])) {
 
     $id = $_POST['id'];
@@ -98,7 +98,9 @@ body {
 }
 
 /* MAIN */
-.main-content { margin-left: 260px; }
+.main-content {
+    margin-left: 260px;
+}
 
 .card-box {
     background: #fff;
@@ -124,16 +126,39 @@ body {
 .action-btn.edit { color: #f0ad4e; }
 .action-btn.delete { color: #dc3545; }
 
+/* OVERVIEW CARDS */
 .overview-card {
     padding: 20px;
     border-radius: 12px;
     color: white;
     text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
+/* HOVER ANIMATION */
+.overview-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* CLICK EFFECT */
+.overview-card:active {
+    transform: scale(0.96);
+}
+
+/* CARD COLORS */
 .overview-blue { background: #0d6efd; }
 .overview-green { background: #198754; }
 .overview-yellow { background: #ffc107; color: black; }
+
+/* BUTTON STYLE */
+.overview-btn {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
 </style>
 </head>
 
@@ -174,26 +199,34 @@ body {
 
 <!-- OVERVIEW -->
 <div class="row mb-4">
+
     <div class="col-md-4">
-        <div class="overview-card overview-blue">
-            <h5>Total Contacts</h5>
-            <h3><?= $totalContacts ?></h3>
-        </div>
+        <button onclick="window.location.href='total_contacts.php'" class="overview-btn">
+            <div class="overview-card overview-blue">
+                <h5>Total Contacts</h5>
+                <h3><?= $totalContacts ?></h3>
+            </div>
+        </button>
     </div>
 
     <div class="col-md-4">
-        <div class="overview-card overview-green">
-            <h5>With Email</h5>
-            <h3><?= $totalEmail ?></h3>
-        </div>
+        <button onclick="window.location.href='with_email.php'" class="overview-btn">
+            <div class="overview-card overview-green">
+                <h5>With Email</h5>
+                <h3><?= $totalEmail ?></h3>
+            </div>
+        </button>
     </div>
 
     <div class="col-md-4">
-        <div class="overview-card overview-yellow">
-            <h5>With Phone</h5>
-            <h3><?= $totalPhone ?></h3>
-        </div>
+        <button onclick="window.location.href='with_phone.php'" class="overview-btn">
+            <div class="overview-card overview-yellow">
+                <h5>With Phone</h5>
+                <h3><?= $totalPhone ?></h3>
+            </div>
+        </button>
     </div>
+
 </div>
 
 <!-- SEARCH -->
@@ -205,7 +238,14 @@ body {
 <table class="table table-hover text-center">
 <thead>
 <tr>
-<th>ID</th><th>Image</th><th>Name</th><th>Phone</th><th>Email</th><th>Address</th><th>Birthday</th><th>Action</th>
+<th>ID</th>
+<th>Image</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Address</th>
+<th>Birthday</th>
+<th>Action</th>
 </tr>
 </thead>
 
@@ -214,7 +254,13 @@ body {
 <?php
 if (!empty($_GET['search'])) {
     $search = $_GET['search'];
-    $result = $conn->query("SELECT * FROM contacts WHERE name LIKE '%$search%' OR phone LIKE '%$search%' OR email LIKE '%$search%'");
+
+    $result = $conn->query("
+        SELECT * FROM contacts 
+        WHERE name LIKE '%$search%' 
+        OR phone LIKE '%$search%' 
+        OR email LIKE '%$search%'
+    ");
 } else {
     $result = $conn->query("SELECT * FROM contacts");
 }
@@ -223,18 +269,21 @@ while($row = $result->fetch_assoc()) {
 ?>
 
 <tr>
-    <div class="modal fade" id="imgModal<?= $row['id']; ?>" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background: transparent; border: none;">
 
-      <div class="modal-body text-center">
-        <img src="uploads/<?= $row['image']; ?>" 
-             style="width:100%; max-height:500px; object-fit:contain; border-radius:10px;">
-      </div>
+<!-- IMAGE MODAL -->
+<div class="modal fade" id="imgModal<?= $row['id']; ?>" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content" style="background: transparent; border: none;">
 
-    </div>
-  </div>
+<div class="modal-body text-center">
+<img src="uploads/<?= $row['image']; ?>" 
+     style="width:100%; max-height:500px; object-fit:contain; border-radius:10px;">
 </div>
+
+</div>
+</div>
+</div>
+
 <td><?= $row['id'] ?></td>
 
 <td>
@@ -263,17 +312,17 @@ while($row = $result->fetch_assoc()) {
 
 <td>
 
-<!-- EDIT ICON -->
+<!-- EDIT -->
 <button class="action-btn edit" data-bs-toggle="modal" data-bs-target="#edit<?= $row['id']; ?>">
-    <i class="fa-solid fa-pen-to-square"></i>
+<i class="fa-solid fa-pen-to-square"></i>
 </button>
 
-<!-- DELETE ICON -->
+<!-- DELETE -->
 <a href="delete.php?id=<?= $row['id']; ?>" 
    class="action-btn delete"
    onclick="return confirm('Are you sure you want to delete this contact?')">
 
-    <i class="fa-solid fa-trash"></i>
+<i class="fa-solid fa-trash"></i>
 </a>
 
 </td>
@@ -316,6 +365,8 @@ while($row = $result->fetch_assoc()) {
 </div>
 </div>
 
+</tr>
+
 <?php } ?>
 
 </tbody>
@@ -326,5 +377,6 @@ while($row = $result->fetch_assoc()) {
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
